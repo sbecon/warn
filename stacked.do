@@ -86,6 +86,7 @@ twoway area _cumworker8 _cumworker7 _cumworker6 _cumworker5 edate, ///
 	color(gs2 gs4 gs6 gs8) ///
 	text(100 22000 "Other" 400 22000 "Food Services" ///
 	800 22000 "Air Transportation" 1200 22000 "Accomodation", color(white)) /// 
+	title("Colorado Layoffs by Industry", color(black)) /// 
 	xlabel(#8)  ///
 	ymtick(##5) ///
 	graphregion(fcolor(white) lcolor(white)) 
