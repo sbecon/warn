@@ -38,7 +38,7 @@ label values naicscode mylab
 
 gen edate=date(layoffdatestart,"MDY")
 
-format edate %td
+format edate %tdnn/dd/YY
 
 sort naicscode edate
 
@@ -79,8 +79,18 @@ local j = `i' - 1
 gen _cumworker`i' = _cumworker`j' + cumworker`i'
 }
 
-twoway (area _cumworker8 _cumworker7 _cumworker6 _cumworker5 _cumworker4 _cumworker3 _cumworker2 _cumworker1 edate)
 
-graph export "${main_dir}/WARN/try5.pdf", replace
+twoway area _cumworker8 _cumworker7 _cumworker6 _cumworker5 edate, ///
+	ytitle("Total Workers Laid Off") xtitle("Layoff Date") ///
+	yla(, ang(h)) legend(off)  /// 
+	color(gs2 gs4 gs6 gs8) ///
+	text(100 22000 "Other" 400 22000 "Food Services" ///
+	800 22000 "Air Transportation" 1200 22000 "Accomodation", color(white)) /// 
+	xlabel(#8)  ///
+	ymtick(##5) ///
+	graphregion(fcolor(white) lcolor(white)) 
 
+	 
+
+graph export "${main_dir}/WARN/stacked_plot.pdf", replace
 
