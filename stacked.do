@@ -160,13 +160,13 @@ graph twoway area _cumworker8 _cumworker7 _cumworker6 _cumworker5 edate, ///
 	ytitle("Total Workers Laid Off") xtitle("Layoff Date") ///
 	yla(, ang(h)) legend(off)  /// 
 	color(gs2 gs4 gs6 gs8) ///
-	text(100 22000 "Other" 400 22000 "Food Services" ///
-	800 22000 "Air Transportation" 1200 22000 "Accomodation", color(white)) /// 
+	text(100 22000 "   Other" 400 22000 "   Food Services" ///
+	800 22000 "   Air Transportation" 1200 22000 "   Accomodation", color(white)) /// 
 	title("Colorado Layoffs by Industry, 2020" " " " ", color(black)) /// 
 	xlabel(#8)  ///
 	ymtick(##5) ///
 	graphregion(fcolor(white) lcolor(white)) 
-
+	
 *adds lines corresponding to social distancing dates and the # of layoffs from 2019
 addplot: (scatteri 0 21998 2000 21998, recast(line) lw(medthick) lc(edkblue) text(2140 21998 "Social" "Distancing")) ///
 	(scatteri 0 21994 2000 21994, recast(line) lw(medthick) lc(eltblue) text(2200 21994 "Non-Essential" " Services" "Close")) ///
